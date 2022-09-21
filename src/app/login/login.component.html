@@ -1,0 +1,38 @@
+ 
+  <div class="head">
+    <h1 class="w3-xxxlarge w3-animate-bottom">Transport Feedback</h1>
+    </div>
+  <div class="text-center">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="d-flex-center">
+        <div class="example-container">
+          <div>
+            <mat-form-field>
+              <h3>Email:</h3>
+              <input matInput formControlName="email">
+              <mat-error *ngIf="!loginForm.get('email')?.errors?.required && (loginForm.get('email')?.errors?.pattern)" class="redtext">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) && loginForm.get('email')?.errors?.required" class="redtext">
+                Email is required
+              </mat-error>
+            </mat-form-field>
+          </div><br>
+          <div class="mt-top-2 form-floating mb-3">
+            <mat-form-field>
+              <h3>Password:</h3>
+              <input matInput type="password" formControlName="password">    
+              <mat-error *ngIf="!loginForm.get('password')?.errors?.required" class="redtext">
+                Password length must be greater than or equal to 8 and password must contain one or more uppercase , lowercase , numeric and special characters
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors?.required" class="redtext">
+                Password is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="mt-top">
+            <button [disabled]="!loginForm.valid" mat-raised-button color="primary" mat-button>Sign In</button>
+          </div>
+        </div>
+      </form>
+      </div>
+  
