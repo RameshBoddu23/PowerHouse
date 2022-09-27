@@ -1,0 +1,14 @@
+.filter
+{
+    float: right;
+    margin:13px;
+    font-weight: bold;
+    display: flex;
+}
+th{
+    background-color: dodgerblue;
+    color: white;
+}
+.tr:hover{
+    background-color:#eeeeee;
+}

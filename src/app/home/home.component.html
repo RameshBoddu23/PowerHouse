@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="filter">
+    
+    <label >Filter :</label><br>
+<input type="text" placeholder="Search Here" [(ngModel)]="search1"></div>
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email id</th>
+            <th scope="col">Mails count</th>
+            <th scope="col">Created by</th>
+            <th scope="col">Created date</th>
+            <th scope="col">Updated by</th>
+            <th scope="col">Updated date</th>
+            <th scope="col">Mail subject</th>
+            <th scope="col">Mail body</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of data1 | search:search1">
+            <td>{{d.name}}</td>
+            <td>{{d.email_id}}</td>
+            <td>{{d.mails_count}}</td>
+            <td>{{d.created_by}}</td>
+            <td>{{d.created_date}}</td>
+            <td>{{d.updated_by}}</td>
+            <td>{{d.updated_date}}</td>
+            <td>{{d.mail_subject}}</td>
+            <td>{{d.mail_body}}</td>
+        </tr>
+
+
+    </tbody>
+</table>
