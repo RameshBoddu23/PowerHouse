@@ -4,3 +4,7 @@ img
     width: 50px;
     padding-right: 10px;
 }
+.logout
+{
+    float: right;
+}
